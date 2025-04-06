@@ -52,12 +52,13 @@ Actualmente el juego incluye los siguientes elementos:
 1. Cloná o descargá este repositorio.
    
 2. Asegurate de tener una estructura como esta:
+```
 assets/
 │ ├── img/ ← imágenes en formato .webp
 │ ├── data/
 │ └── brands.json ← archivo con los datos dinámicos
 │ index.html style.css main.js
-
+```
 3. Alojá las imágenes en la carpeta `assets/img/` o modificá el JSON para enlazarlas desde un servicio externo (por ejemplo, Discord CDN o Cloudinary).
    
 4. Abrí `index.html` en tu navegador.
