@@ -87,7 +87,7 @@ Podés usar este juego tanto desde una PC como desde un smartphone.
 
 ## 👤 Sobre mí
 
-Soy **[Natán Yona]**, **Desarrollador FullStack** con experiencia en el desarrollo de aplicaciones web utilizando tecnologías modernas. Cuento con **certificación como desarrollador web FullStack** y actualmente soy **ayudante de cátedra** en la materia **Arquitectura de Ordenadores I**, donde busco aplicar mis conocimientos para crear herramientas educativas interactivas que hagan más dinámico el aprendizaje.
+Soy **Natán Yona**, **Desarrollador FullStack** con experiencia en el desarrollo de aplicaciones web utilizando tecnologías modernas. Cuento con **certificación como desarrollador web FullStack** y actualmente soy **ayudante de cátedra** en la materia **Arquitectura de Ordenadores I**, donde busco aplicar mis conocimientos para crear herramientas educativas interactivas que hagan más dinámico el aprendizaje.
 
 Me interesa especialmente combinar tecnología y educación para generar experiencias útiles, visuales y accesibles para estudiantes de carreras técnicas.
 
@@ -111,7 +111,7 @@ Este proyecto fue desarrollado en el marco de la materia **Arquitectura de Orden
 
 ## 👨‍🏫 Autor y colaboradores
 
-- **Desarrollado por**: [Natán Yona]
+- **Desarrollado por**: Natán Yona
 - **Cátedra**: Arquitectura de Ordenadores I
 - **Rol**: Ayudante de cátedra
 
