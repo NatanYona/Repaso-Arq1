@@ -101,7 +101,6 @@ Este proyecto fue desarrollado en el marco de la materia **Arquitectura de Orden
 
 ## 📦 Extensiones posibles
 
-- Agregar más componentes como memorias RAM, conectores USB, HDMI, etc.
 - Implementar puntuación persistente.
 - Modo competitivo o contrarreloj.
 - Compatibilidad con pantallas táctiles.

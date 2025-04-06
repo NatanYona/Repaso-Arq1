@@ -58,5 +58,17 @@
   {
     "iconName": "https://media.discordapp.net/attachments/429833252656644097/1358556926270636275/dvi.jpg?ex=67f4463b&is=67f2f4bb&hm=bde5f200bcde134d32b45efacbdbdee38cf76a8ff5d039b4975e547e0fb3f1cb&=&format=webp",
     "brandName": "Puerto DVI"
+  },
+  {
+    "iconName":"https://media.discordapp.net/attachments/429833252656644097/1358586251803885719/ram.jpg?ex=67f4618b&is=67f3100b&hm=6ff024c8542c9fc8d21f895c81101bd30b93b2c17cb6b3be8140508509e80a40&=&format=webp&width=1376&height=917",
+    "brandName":"Slot memoria RAM"
+  },
+  {
+    "iconName":"https://media.discordapp.net/attachments/429833252656644097/1358586955453038734/hdmi.jpg?ex=67f46233&is=67f310b3&hm=b34f23e959b3fc200f00ad0a6393f0925b8aa75ef5a8b1ea6dcaf7befa7a1d4d&=&format=webp&width=720&height=960",
+    "brandName":"Puerto HDMI"
+  },
+  {
+    "iconName":"https://media.discordapp.net/attachments/429833252656644097/1358587304737771530/usb-a.jpg?ex=67f46286&is=67f31106&hm=2cbb308208d1cc3b5b8966ecc5e6d62eba279b7b4ad05b7fc8f1d1a0c0f0ed85&=&format=webp",
+    "brandName":"Puerto USB-A"
   }
 ]
