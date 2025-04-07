@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+/* Basic reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* General styles */
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #eee;
   color: #111;
 }
 
+/* Score section */
 .score {
   font-family: monospace;
   text-align: center;
@@ -21,41 +25,65 @@ body {
   position: relative;
   transition: opacity 0.2s;
 }
-#play-again-btn {
-  position: absolute;
-  top: -0.5rem;
+
+/* Restart button (Play Again) */
+#play-again-btn,
+#game-over-btn {
+  position: fixed;
+  top: 50%;
   left: 50%;
-  margin-left: -50px;
-  font-size: 1rem;
+  transform: translate(-50%, 150%);
+  font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
   background-color: #111;
-  border: 5px double #fff; 
+  border: 5px double #fff;
   border-radius: 14px;
-  padding: 8px 10px;  
-  outline: none;
-  letter-spacing: .05em;
+  padding: 14px 20px;
   cursor: pointer;
-  display: none;
+  display: block;
   opacity: 0;
-  transition: opacity 0.5s, transform 0.5s, background-color 0.2s;
+  z-index: 1000;
+  text-align: center;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  max-width: 90%;
 }
+
+#play-again-btn::before,
+#game-over-btn::before {
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+  color: #eee;
+}
+
+#play-again-btn.play-again-btn-entrance,
+#game-over-btn.visible {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
 #play-again-btn:hover {
   background-color: #333;
 }
-#play-again-btn:active {
-  background-color: #555;
+
+#game-over-btn {
+  background-color: #b00020;
 }
-#play-again-btn.play-again-btn-entrance {
-  opacity: 1;
-  transform: translateX(6rem);
+
+#game-over-btn:hover {
+  background-color: #c62828;
 }
+
+/* Draggable items container */
 .draggable-items {
   display: flex;
   justify-content: center;
   margin: 1rem 1rem 1.5rem 1rem;
   transition: opacity 0.5s;
 }
+
 .draggable {
   height: 5rem;
   margin: 0rem 0.5rem;
@@ -64,6 +92,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .draggable img {
   max-height: 100%;
   height: auto;
@@ -71,19 +100,24 @@ body {
   object-fit: contain;
   pointer-events: none;
 }
+
 .draggable:hover {
   opacity: 0.5;
 }
+
+/* Matching pairs container */
 .matching-pairs {
   transition: opacity 0.5s;
 }
+
 .matching-pair {
   height: 6rem;
   width: 22rem;
   margin: 1rem auto;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
+
 .matching-pair span {
   height: 100%;
   display: flex;
@@ -92,22 +126,26 @@ body {
   text-align: center;
   user-select: none;
 }
+
+/* Label (text) */
 .label {
   width: 15rem;
   font-size: 2rem;
 }
+
+/* Drop zone */
 .droppable {
   background-color: #fff;
   border: 3px dashed #111;
-  transition: 0.2s;
+  transition: 0.2s ease, width 0.3s ease, height 0.3s ease;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   padding: 0.2rem;
-  margin-left: 1rem; 
-  transition: 0.2s ease, width 0.3s ease, height 0.3s ease;
+  margin-left: 1rem;
   min-width: 6rem;
 }
+
 .droppable img {
   height: auto;
   width: auto;
@@ -115,28 +153,52 @@ body {
   max-height: 100%;
   object-fit: contain;
 }
+
+/* Active drop zone */
 .droppable-hover {
   background-color: #bee3f0;
   transform: scale(1.1);
 }
+
+/* Style after correct drop */
 .dropped {
   border-style: solid;
 }
+
+/* Style for dragged item */
 .dragged {
   user-select: none;
   opacity: 0.1;
   cursor: default;
 }
+
 .draggable.dragged:hover {
   opacity: 0.1;
 }
 
-@media (max-width: 600px) {
-  html { font-size: 14px; }
-  #play-again-btn { top: -0.4rem; }
-  #play-again-btn.play-again-btn-entrance { transform: translateX(7rem); }
+/* Timer aesthetics */
+.timer-container {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  padding: 0.4rem 1rem;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
 }
 
+#game-timer {
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Alert mode for timer */
+#game-timer.alert-red {
+  color: red;
+  font-weight: bold;
+}
+
+/* Responsive styles */
 @media (max-width: 600px) {
   html {
     font-size: 14px;
@@ -151,12 +213,10 @@ body {
     margin: 0.5rem 0;
   }
 
-  #play-again-btn {
-    position: static;
-    display: block;
-    margin: 0.5rem auto;
-    font-size: 0.95rem;
-    padding: 6px 12px;
+  #play-again-btn,
+  #game-over-btn {
+    font-size: 1rem;
+    padding: 10px 12px;
   }
 
   .draggable-items {

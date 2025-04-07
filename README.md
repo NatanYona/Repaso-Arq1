@@ -9,6 +9,19 @@ Este proyecto es una herramienta interactiva desarrollada con **JavaScript**, **
 El juego consiste en **arrastrar imágenes** de distintos componentes y **soltarlas sobre su nombre correspondiente**. Cada partida incluye una combinación de respuestas correctas e incorrectas para reforzar el reconocimiento visual y fomentar el aprendizaje.
 
 ---
+## ⏱️ Modo con Temporizador
+
+El juego ahora incluye un **modo con temporizador** que añade un componente de desafío adicional. Esta funcionalidad está pensada para quienes deseen practicar bajo presión o en contextos de evaluación.
+
+### ¿Cómo funciona el temporizador?
+- El temporizador inicia automáticamente al comenzar una partida.
+- Tenés **2 minutos** para completar todos los emparejamientos.
+- Cuando faltan **30 segundos**, el temporizador cambia de color para alertarte.
+- Si se acaba el tiempo, se bloquean las interacciones y aparece un botón con el mensaje **"¡Buen intento!"** que permite reiniciar la partida.
+
+Esta modalidad busca fomentar la rapidez mental y la familiaridad visual con los componentes.
+
+---
 
 ### 🧠 Contenidos abordados  
 Actualmente el juego incluye los siguientes elementos:
@@ -111,7 +124,6 @@ Este proyecto fue desarrollado en el marco de la materia **Arquitectura de Orden
 ## 📦 Extensiones posibles
 
 - Implementar puntuación persistente.
-- Modo competitivo o contrarreloj.
 - Compatibilidad con pantallas táctiles.
 - Accesibilidad para estudiantes con dificultades visuales.
 
