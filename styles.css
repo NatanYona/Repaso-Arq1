@@ -254,3 +254,72 @@ body {
     max-width: 30%;
   }
 }
+
+/* =========================
+   Modal de imagen ampliada
+   ========================= */
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-overlay.visible {
+  display: flex;
+}
+
+.modal-content img {
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  animation: zoomIn 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Animaciones para entrada suave */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+#modal-img.closing {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+.modal-overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-overlay.closing {
+  animation: fadeOutModal 0.3s ease forwards;
+}
+
+@keyframes fadeOutModal {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}

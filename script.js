@@ -13,6 +13,7 @@ let gameOver = false;
 let draggableElements;
 let droppableElements;
 let touchDraggedElement = null;
+let touchMoved = false; 
 
 // DOM ELEMENTS
 const scoreSection = document.querySelector(".score");
@@ -23,6 +24,10 @@ const gameOverBtn = document.getElementById("game-over-btn");
 
 const draggableItems = document.querySelector(".draggable-items");
 const matchingPairs = document.querySelector(".matching-pairs");
+
+const imageModal = document.getElementById('image-modal');
+const modalImg = document.getElementById('modal-img');
+const modalOverlay = document.querySelector('.modal-overlay');
 
 // =========================
 // GAME INITIALIZATION
@@ -37,7 +42,7 @@ fetch("assets/data/brands.json")
 function initiateGame() {
     gameOver = false;
     startGameTimer();
-
+    
     const randomDraggableBrands = generateRandomItemsArray(totalDraggableItems, brands);
     const randomDroppableBrands = generateRandomItemsArray(totalMatchingPairs, randomDraggableBrands);
     const sortedDroppableBrands = [...randomDroppableBrands].sort((a, b) =>
@@ -70,6 +75,18 @@ function initiateGame() {
     draggableElements.forEach((elem) => {
         elem.addEventListener("dragstart", dragStart);
         elem.addEventListener("touchstart", touchStart, { passive: false });
+
+        // Modal support for desktop
+        elem.addEventListener("click", () => {
+            openImageModal(elem.src);
+        });
+
+        // Modal support for mobile
+        elem.addEventListener("touchend", (e) => {
+            if (!touchMoved && !elem.classList.contains("dragged")) {
+                openImageModal(elem.src);
+            }
+        });
     });
 
     const validDropZones = document.querySelectorAll(".droppable, .label");
@@ -83,6 +100,35 @@ function initiateGame() {
     document.addEventListener("touchmove", touchMove, { passive: false });
     document.addEventListener("touchend", touchEnd);
 }
+
+// =========================
+// IMAGE MODAL
+// =========================
+function openImageModal(src) {
+    modalImg.src = src;
+    imageModal.classList.add("visible");
+}
+
+function closeImageModal() {
+    imageModal.classList.add("closing");
+
+    setTimeout(() => {
+        imageModal.classList.remove("visible", "closing");
+        modalImg.src = "";
+    }, 300);
+}
+
+modalOverlay.addEventListener("click", (e) => {
+    if (e.target === modalOverlay) {
+        closeImageModal();
+    }
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        closeImageModal();
+    }
+});
 
 // =========================
 // TIMER
@@ -107,8 +153,7 @@ function startGameTimer() {
 
         timeLeft--;
         updateTimerDisplay(timeLeft, timerDisplay);
-        updateTimerVisual(timeLeft, timerDisplay); // 🔴 Change color when <= 30s
-
+        updateTimerVisual(timeLeft, timerDisplay);
     }, 1000);
 }
 
@@ -121,10 +166,10 @@ function updateTimerDisplay(seconds, element) {
 function updateTimerVisual(seconds, element) {
     if (seconds <= 30) {
         element.style.fontWeight = "bold";
-        element.style.color = seconds % 2 === 0 ? "#b00020" : "#000000"; // rojo o negro intercalado
+        element.style.color = seconds % 2 === 0 ? "#b00020" : "#000000";
     } else {
         element.style.fontWeight = "normal";
-        element.style.color = "#111"; // color por defecto
+        element.style.color = "#111";
     }
 }
 
@@ -201,6 +246,10 @@ function getDropTarget(element) {
 function touchStart(e) {
     if (gameOver || !e.target.classList.contains("draggable") || e.target.classList.contains("dragged")) return;
 
+    touchMoved = false;
+
+    if (e.touches.length > 1) return;
+
     touchDraggedElement = e.target.cloneNode(true);
     touchDraggedElement.style.position = "absolute";
     touchDraggedElement.style.zIndex = "1000";
@@ -214,6 +263,7 @@ function touchStart(e) {
 
 function touchMove(e) {
     if (touchDraggedElement) {
+        touchMoved = true;
         moveAt(e.touches[0].pageX, e.touches[0].pageY);
         e.preventDefault();
     }
@@ -222,13 +272,17 @@ function touchMove(e) {
 function touchEnd(e) {
     if (!touchDraggedElement) return;
 
-    const touch = e.changedTouches[0];
-    const target = document.elementFromPoint(touch.clientX, touch.clientY);
-    const dropZone = getDropTarget(target);
+    if (!touchMoved) {
+        openImageModal(touchDraggedElement.src);
+    } else {
+        const touch = e.changedTouches[0];
+        const target = document.elementFromPoint(touch.clientX, touch.clientY);
+        const dropZone = getDropTarget(target);
 
-    if (!gameOver && dropZone && !dropZone.classList.contains("dropped")) {
-        const draggedId = touchDraggedElement.id;
-        processMatch(draggedId, dropZone);
+        if (!gameOver && dropZone && !dropZone.classList.contains("dropped")) {
+            const draggedId = touchDraggedElement.id;
+            processMatch(draggedId, dropZone);
+        }
     }
 
     touchDraggedElement.remove();

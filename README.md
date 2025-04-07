@@ -23,41 +23,32 @@ Esta modalidad busca fomentar la rapidez mental y la familiaridad visual con los
 
 ---
 
-### 🧠 Contenidos abordados  
+## 🧠 Contenidos abordados
+
 Actualmente el juego incluye los siguientes elementos:
 
-**Conectores de alimentación:**
+### 🔌 Conectores de alimentación:
+- Conector de 24 pines (ATX)
+- Conector de 4/8 pines (CPU)
+- Conector SATA de energía
+- Conector Molex
 
-- Conector de 24 pines (ATX)  
-- Conector de 4/8 pines (CPU)  
-- Conector SATA de energía  
-- Conector Molex  
+### 💾 Conectores de datos:
+- Conector SATA de datos
+- Conector IDE de datos
 
-**Conectores de datos:**
+### 📦 Slots de expansión:
+- Slot PCI
+- Slot PCI Express
+- Slot AGP
 
-- Conector SATA de datos  
-- Conector IDE de datos  
-
-**Slots de expansión:**
-
-- Slot PCI  
-- Slot PCI Express  
-- Slot AGP  
-
-**Puertos de entrada/salida:**
-
-- Puerto PS/2  
-- Puerto RJ-45 (Ethernet)  
-- Puerto Serial (RS-232)  
-- Puerto VGA  
-- Puerto DVI  
-- Puerto de audio 3.5 mm  
-- Puerto USB-A  
-- Puerto HDMI  
-
-**Otros componentes:**
-
-- Memoria RAM
+### 🖧 Puertos de entrada/salida:
+- Puerto PS/2
+- Puerto RJ-45 (Ethernet)
+- Puerto Serial (RS-232)
+- Puerto VGA
+- Puerto DVI
+- Puerto de audio 3.5 mm
 
 ---
 
