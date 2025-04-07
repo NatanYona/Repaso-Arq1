@@ -168,7 +168,7 @@ function updateTimerVisual(seconds, element) {
         element.style.fontWeight = "bold";
         element.style.color = seconds % 2 === 0 ? "#b00020" : "#000000";
     } else {
-        element.style.fontWeight = "normal";
+        element.style.fontWeight = "bold";
         element.style.color = "#111";
     }
 }
