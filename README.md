@@ -99,7 +99,7 @@ Podés usar este juego tanto desde una PC como desde un smartphone.
 ---
 
 
-## Historial de actualizaciones
+## 📝 Historial de actualizaciones
 
 - **Alpha 1.2** - Se agregó la función de zoom para imágenes en desktop y mobile.
 - **Alpha 1.1** - Se incorporó el temporizador de juego.
