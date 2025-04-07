@@ -98,6 +98,15 @@ Podés usar este juego tanto desde una PC como desde un smartphone.
 
 ---
 
+
+## Historial de actualizaciones
+
+- **Alpha 1.2** - Se agregó la función de zoom para imágenes en desktop y mobile.
+- **Alpha 1.1** - Se incorporó el temporizador de juego.
+- **Alpha 1.0** - Primera versión funcional del juego.
+
+---
+
 ## 👤 Sobre mí
 
 Soy **Natán Yona**, **Desarrollador FullStack** con experiencia en el desarrollo de aplicaciones web utilizando tecnologías modernas. Cuento con **certificación como desarrollador web FullStack** y actualmente soy **ayudante de cátedra** en la materia **Arquitectura de Ordenadores I**, donde busco aplicar mis conocimientos para crear herramientas educativas interactivas que hagan más dinámico el aprendizaje.
