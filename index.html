@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <!-- Puntaje en tiempo real -->
+    <div id="live-score">Puntaje: 0</div>
+
     <section class="score">
         <span>Correctas:</span><span class="correct">0</span><br><span>Intentos:</span><span class="total">0</span>
         <button id="play-again-btn">Play Again</button>
@@ -23,7 +26,26 @@
 
     <section class="matching-pairs">
     </section>
-
+    <div id="end-screen" class="end-screen hidden">
+        <div class="end-screen-content">
+            <h2 id="end-message">¡Bien hecho!</h2>
+            <div class="stats-container" id="end-stats">
+                <div class="stat-card">
+                  <span class="stat-label">Puntaje</span>
+                  <span class="stat-value" id="stat-score">0</span>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-label">Correctas</span>
+                  <span class="stat-value" id="stat-correct">0</span>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-label">Intentos</span>
+                  <span class="stat-value" id="stat-total">0</span>
+                </div>
+              </div>
+            <button id="restart-btn">Jugar de nuevo</button>
+        </div>
+    </div>
     <!-- Modal para visualizar imágenes en grande -->
     <div id="image-modal" class="modal-overlay">
         <div class="modal-content">

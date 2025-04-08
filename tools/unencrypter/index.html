@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Verificador Hash</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Verificador de Hash de Puntajes</h1>
+        <input type="text" id="hashInput" placeholder="Ingrese el hash SHA-256 de 64 caracteres">
+        <button id="verifyBtn">Verificar Puntaje</button>
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Verificando...</p>
+        </div>
+        <div id="result">
+            <h3 id="resultTitle">Resultado</h3>
+            <div id="resultDetails" class="params"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

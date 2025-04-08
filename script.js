@@ -2,9 +2,11 @@
 // GLOBAL VARIABLES
 // =========================
 let brands = [];
-
 let correct = 0;
 let total = 0;
+let score = 0;
+let timeLeft = 120;
+const totalTime = 120;
 const totalDraggableItems = 7;
 const totalMatchingPairs = 5;
 
@@ -13,7 +15,7 @@ let gameOver = false;
 let draggableElements;
 let droppableElements;
 let touchDraggedElement = null;
-let touchMoved = false; 
+let touchMoved = false;
 
 // DOM ELEMENTS
 const scoreSection = document.querySelector(".score");
@@ -28,6 +30,12 @@ const matchingPairs = document.querySelector(".matching-pairs");
 const imageModal = document.getElementById('image-modal');
 const modalImg = document.getElementById('modal-img');
 const modalOverlay = document.querySelector('.modal-overlay');
+const liveScoreEl = document.getElementById("live-score");
+
+const endScreen = document.getElementById("end-screen");
+const endMessage = document.getElementById("end-message");
+const endStats = document.getElementById("end-stats");
+const restartBtn = document.getElementById("restart-btn");
 
 // =========================
 // GAME INITIALIZATION
@@ -41,8 +49,9 @@ fetch("assets/data/brands.json")
 
 function initiateGame() {
     gameOver = false;
+    timeLeft = totalTime;
     startGameTimer();
-    
+
     const randomDraggableBrands = generateRandomItemsArray(totalDraggableItems, brands);
     const randomDroppableBrands = generateRandomItemsArray(totalMatchingPairs, randomDraggableBrands);
     const sortedDroppableBrands = [...randomDroppableBrands].sort((a, b) =>
@@ -76,12 +85,7 @@ function initiateGame() {
         elem.addEventListener("dragstart", dragStart);
         elem.addEventListener("touchstart", touchStart, { passive: false });
 
-        // Modal support for desktop
-        elem.addEventListener("click", () => {
-            openImageModal(elem.src);
-        });
-
-        // Modal support for mobile
+        elem.addEventListener("click", () => openImageModal(elem.src));
         elem.addEventListener("touchend", (e) => {
             if (!touchMoved && !elem.classList.contains("dragged")) {
                 openImageModal(elem.src);
@@ -136,7 +140,7 @@ document.addEventListener("keydown", (e) => {
 function startGameTimer() {
     clearTimeout(gameTimer);
     const timerDisplay = document.getElementById("game-timer");
-    let timeLeft = 120;
+    timeLeft = totalTime;
 
     updateTimerDisplay(timeLeft, timerDisplay);
     updateTimerVisual(timeLeft, timerDisplay);
@@ -144,16 +148,16 @@ function startGameTimer() {
     gameTimer = setInterval(() => {
         if (timeLeft <= 0) {
             clearInterval(gameTimer);
-            gameOver = true;
             disableGame();
             timerDisplay.textContent = "0:00";
-            gameOverBtn.classList.add("visible");
+            showEndScreen(false); // perdió
             return;
         }
 
         timeLeft--;
         updateTimerDisplay(timeLeft, timerDisplay);
         updateTimerVisual(timeLeft, timerDisplay);
+        updateLiveScore();
     }, 1000);
 }
 
@@ -178,13 +182,6 @@ function disableGame() {
         el.setAttribute("draggable", "false");
         el.classList.add("dragged");
     });
-
-    playAgainBtn.textContent = "Buen Intento!";
-    playAgainBtn.style.display = "block";
-
-    setTimeout(() => {
-        playAgainBtn.classList.add("play-again-btn-entrance");
-    }, 200);
 }
 
 // =========================
@@ -241,7 +238,7 @@ function getDropTarget(element) {
 }
 
 // =========================
-// TOUCH EVENTS (MOBILE)
+// TOUCH EVENTS
 // =========================
 function touchStart(e) {
     if (gameOver || !e.target.classList.contains("draggable") || e.target.classList.contains("dragged")) return;
@@ -298,19 +295,29 @@ function moveAt(x, y) {
 // MATCHING LOGIC
 // =========================
 function processMatch(draggableId, dropTarget) {
+    if (gameOver) return;
+
+    const realDraggable = document.getElementById(draggableId);
+    if (realDraggable.classList.contains("dragged")) return;
+
     const expectedId = dropTarget.getAttribute("data-brand");
     total++;
 
     if (draggableId === expectedId) {
-        const realDraggable = document.getElementById(draggableId);
         dropTarget.classList.add("dropped");
         realDraggable.classList.add("dragged");
         realDraggable.setAttribute("draggable", "false");
         dropTarget.innerHTML = `<img src="${realDraggable.src}">`;
         correct++;
+    } else {
+        const timeFactor = timeLeft / totalTime;
+        let mistakes = total - correct;
+        const penalty = Math.floor((300 + mistakes * 75) * timeFactor);
+        score = Math.max(0, score - penalty);
     }
 
     updateScore();
+    updateLiveScore();
     checkGameEnd();
 }
 
@@ -324,43 +331,103 @@ function updateScore() {
         correctSpan.textContent = correct;
         totalSpan.textContent = total;
         scoreSection.style.opacity = 1;
+
+        updateLiveScore();
     }, 200);
+}
+
+function updateLiveScore() {
+    const calculated = calculateLiveScore(correct, total, timeLeft, totalTime);
+    liveScoreEl.textContent = `Puntaje: ${calculated}`;
+}
+
+function calculateLiveScore(correct, total, timeLeft, totalTime) {
+    const accuracy = correct / (total || 1);
+    const multiplier = timeLeft / totalTime;
+    const score = Math.floor((correct * 10 + accuracy * 5) * multiplier * totalTime);
+    return Math.max(0, score);
 }
 
 function checkGameEnd() {
     if (correct === Math.min(totalMatchingPairs, totalDraggableItems)) {
         clearTimeout(gameTimer);
-        playAgainBtn.textContent = "Bien Hecho!";
-        playAgainBtn.style.display = "block";
-
-        setTimeout(() => {
-            playAgainBtn.classList.add("play-again-btn-entrance");
-        }, 200);
+        showEndScreen(true); // ganó
     }
 }
+
+async function showEndScreen(won) {
+    gameOver = true;
+  
+    const finalScore = calculateLiveScore(correct, total, timeLeft, totalTime);
+    const hash = await generateScoreHash(correct, total, timeLeft, finalScore);
+  
+    let message = "";
+    let themeColor = won ? "#007bff" : "#b00020";
+  
+    if (!won) {
+      message = "¡Mejor suerte la próxima!";
+      themeColor = "#b00020";
+    } else if (correct === 5 && total === 5) {
+      message = "¡Puntaje perfecto! ¡Excelente trabajo!";
+    } else if (total - correct <= 2) {
+      message = "¡Lo hiciste genial!";
+    } else {
+      message = "¡Bien jugado! ¡Lograste terminar!";
+    }
+  
+    endMessage.textContent = message;
+    endMessage.style.color = themeColor;
+  
+    endStats.innerHTML = `
+      <div class="stats-container">
+        <div class="stat-card">
+          <span class="stat-label">Puntaje</span>
+          <span class="stat-value">${finalScore}</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Correctas</span>
+          <span class="stat-value">${correct}</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Intentos</span>
+          <span class="stat-value">${total}</span>
+        </div>
+      </div>
+    `;
+  
+    // 🔧 Eliminar ID anterior si existe
+    const existingHash = endScreen.querySelector(".game-id");
+    if (existingHash) {
+      existingHash.remove();
+    }
+  
+    // 🔐 Agregar el nuevo ID de partida
+    const hashDisplay = document.createElement("div");
+    hashDisplay.classList.add("game-id");
+    hashDisplay.textContent = `${hash}`;
+    endScreen.querySelector(".end-screen-content").appendChild(hashDisplay);
+  
+    endScreen.classList.remove("hidden");
+  }
+  
+  
 
 // =========================
 // PLAY AGAIN BUTTON
 // =========================
-playAgainBtn.addEventListener("click", () => {
-    playAgainBtn.classList.remove("play-again-btn-entrance");
-    gameOverBtn.classList.remove("visible");
+restartBtn.addEventListener("click", () => {
+    endScreen.classList.add("hidden");
 
     correct = 0;
     total = 0;
+    timeLeft = totalTime;
+    document.getElementById("live-score").textContent = "Puntaje: 0";
 
-    draggableItems.style.opacity = 0;
-    matchingPairs.style.opacity = 0;
+    draggableItems.innerHTML = "";
+    matchingPairs.innerHTML = "";
 
-    setTimeout(() => {
-        playAgainBtn.style.display = "none";
-        draggableItems.innerHTML = "";
-        matchingPairs.innerHTML = "";
-        initiateGame();
-        updateScore();
-        draggableItems.style.opacity = 1;
-        matchingPairs.style.opacity = 1;
-    }, 500);
+    initiateGame();
+    updateScore();
 });
 
 // =========================
@@ -377,4 +444,14 @@ function generateRandomItemsArray(n, originalArray) {
         copy.splice(idx, 1);
     }
     return res;
+}
+
+
+
+async function generateScoreHash(correct, total, timeLeft, score) {
+    const rawData = `${correct}-${total}-${timeLeft}-${score}`;
+    const msgBuffer = new TextEncoder().encode(rawData);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }

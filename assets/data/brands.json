@@ -1,74 +1,74 @@
 [
   {
-    "iconName": "https://media.discordapp.net/attachments/429833252656644097/1358556927323279600/sata-power.jpg?ex=67f597bc&is=67f4463c&hm=32bd1ccae9ed146762fe06ce6ca45669a004a2b512ed4dd6b11f773beafafa7f&=&format=webp&width=465&height=465",
+    "iconName": "../img/sata-power.jpg",
     "brandName": "Conector SATA de energía"
   },
   {
-    "iconName": "https://media.discordapp.net/attachments/429833252656644097/1358556966011670739/sata-data.jpg?ex=67f597c5&is=67f44645&hm=a61e4dbe2e26c6235873ea155a60ed85ed4a7b7bf856da207d4d499ffb2470c9&=&format=webp&width=930&height=465",
+    "iconName": "../img/sata-data.jpg",
     "brandName": "Conector SATA de datos"
   },
   {
-    "iconName": "https://media.discordapp.net/attachments/429833252656644097/1358556986236604528/ide-port.jpg?ex=67f597ca&is=67f4464a&hm=5bc64dd331a0d3bf559ae903897c685f6c6380ebccf1b935c2f61491a0b397a7&=&format=webp",
+    "iconName": "../img/ide-port.jpg",
     "brandName": "Conector IDE de datos"
   },
   {
-    "iconName": "https://media.discordapp.net/attachments/429833252656644097/1358556986756567323/molex-power.jpg?ex=67f597ca&is=67f4464a&hm=79d6358581dc9f38e3c0506566b5e12a622f8038d3b850e221f3914553982a52&=&format=webp&width=619&height=465",
+    "iconName": "../img/molex-power.jpg",
     "brandName": "Conector Molex"
   },
   {
-    "iconName": "https://media.discordapp.net/attachments/429833252656644097/1358556999666761840/24-pin.jpg?ex=67f597cd&is=67f4464d&hm=233a7026036f17cc81ee0f50f6a7a00f531fbbdf1d620ae29d3a194160f8b9dd&=&format=webp&width=734&height=465",
+    "iconName": "../img/24-pin.jpg",
     "brandName": "Conector de 24 pines (ATX)"
   },
   {
-    "iconName": "https://media.discordapp.net/attachments/429833252656644097/1358556999423361044/4-pin.jpg?ex=67f597cd&is=67f4464d&hm=6996110cd760ee194ea6f5e935e4ed09333eb380cce2e07786a85b7f694bdfc5&=&format=webp&width=465&height=465",
+    "iconName": "../img/4-pin.jpg",
     "brandName": "Conector de 4/8 pines (CPU)"
   },
   {
-    "iconName": "https://media.discordapp.net/attachments/429833252656644097/1358556987230650429/pci.jpg?ex=67f597ca&is=67f4464a&hm=c2624a637893b6927ee208fd3a465ddc0a500de63c96cbf1b18c2443a867bfd2&=&format=webp&width=731&height=465",
+    "iconName": "../img/pci.jpg",
     "brandName": "Slot PCI"
   },
   {
-    "iconName": "https://media.discordapp.net/attachments/429833252656644097/1358556965126537388/pcie.jpg?ex=67f597c5&is=67f44645&hm=bf467f8dd911ddf0c12d08244a0061368a6f1d4621d0ffd997e505d595a8a37f&=&format=webp&width=758&height=505",
+    "iconName": "../img/pcie.jpg",
     "brandName": "Slot PCI Express"
   },
   {
-    "iconName": "https://media.discordapp.net/attachments/429833252656644097/1358556999922487437/agp.jpg?ex=67f597cd&is=67f4464d&hm=008fd4342cabb2e5401b820a62ae0c9b48a19a33cc5ddb48d968142bcf17e4af&=&format=webp",
+    "iconName": "../img/agp.jpg",
     "brandName": "Slot AGP"
   },
   {
-    "iconName": "https://media.discordapp.net/attachments/429833252656644097/1358556965718196234/rj45.jpg?ex=67f597c5&is=67f44645&hm=0c4495cd1b9e64fb9ea391f502d03820718a1a9804275d3ceb780398f0719f7a&=&format=webp",
+    "iconName": "../img/rj45.jpg",
     "brandName": "Puerto RJ-45 (Ethernet)"
   },
   {
-    "iconName": "https://media.discordapp.net/attachments/429833252656644097/1358556965411885337/ps2.jpg?ex=67f597c5&is=67f44645&hm=078806c0750b009394a574e17a340b42a541d7f3c4dbf14e54f4f62ab3bba003&=&format=webp",
+    "iconName": "../img/ps2.jpg",
     "brandName": "Puerto PS/2"
   },
   {
-    "iconName": "https://media.discordapp.net/attachments/429833252656644097/1358556926958501969/serial-port.jpg?ex=67f597bc&is=67f4463c&hm=0e6f7fbfe66b2639119decf3f719c46f603ea2ad29af51003ac7503c83d97401&=&format=webp&width=620&height=465",
+    "iconName": "../img/serial-port.jpg",
     "brandName": "Puerto Serial (RS-232)"
   },
   {
-    "iconName": "https://media.discordapp.net/attachments/429833252656644097/1358556926555721819/vga.jpg?ex=67f597bc&is=67f4463c&hm=4b99b8da33c2b270cd9e8c23991cc8b0ada520348893fb9354da24279484986b&=&format=webp",
+    "iconName": "../img/vga.jpg",
     "brandName": "Puerto VGA"
   },
   {
-    "iconName": "https://media.discordapp.net/attachments/429833252656644097/1358556986517618851/jack3-5.jpg?ex=67f597ca&is=67f4464a&hm=0706f46fe57497ce641b7760d14687c1749ca16d77e14bf7cd6ea4b6825276b4&=&format=webp",
+    "iconName": "../img/jack3-5.jpg",
     "brandName": "Puerto de audio 3.5 mm"
   },
   {
-    "iconName": "https://media.discordapp.net/attachments/429833252656644097/1358556926270636275/dvi.jpg?ex=67f597bb&is=67f4463b&hm=0838726e5bc2147c6ca0e91fb270259fec4122963e04aa20f3160d4b8c67bca9&=&format=webp",
+    "iconName": "../img/dvi.jpg",
     "brandName": "Puerto DVI"
   },
   {
-    "iconName":"https://media.discordapp.net/attachments/429833252656644097/1358588538333171752/ram.jpg?ex=67f50c6c&is=67f3baec&hm=90e52a9446fb437475981749d16074e39a320e46febbdfa9f34bb500d23dab20&=&format=webp",
+    "iconName":"../img/ram.jpg",
     "brandName":"Slot memoria RAM"
   },
   {
-    "iconName":"https://media.discordapp.net/attachments/429833252656644097/1358586955453038734/hdmi.jpg?ex=67f50af3&is=67f3b973&hm=636da303cd3f288ca0e6a53af90b6dd9d13e8a61644587b72b6df0d95b8189ae&=&format=webp&width=427&height=569",
+    "iconName":"../img/hdmi.jpg",
     "brandName":"Puerto HDMI"
   },
   {
-    "iconName":"https://media.discordapp.net/attachments/429833252656644097/1358587304737771530/usb-a.jpg?ex=67f50b46&is=67f3b9c6&hm=a57151e0aacb9c72ddd41953aeaa233d409df0e7e421be87eb6836aa1d9afc88&=&format=webp&width=930&height=465",
+    "iconName":"../img/usb-a.jpg",
     "brandName":"Puerto USB-A"
   }
 ]
