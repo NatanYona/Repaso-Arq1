@@ -1,74 +1,74 @@
 [
   {
-    "iconName": "/img/sata-power.jpg",
+    "iconName": "https://i.postimg.cc/yJbR923v/sata-power.jpg",
     "brandName": "Conector SATA de energía"
   },
   {
-    "iconName": "../img/sata-data.jpg",
+    "iconName": "https://i.postimg.cc/ph5FBkDx/sata-data.jpg",
     "brandName": "Conector SATA de datos"
   },
   {
-    "iconName": "../img/ide-port.jpg",
+    "iconName": "https://i.postimg.cc/BLRxWRqX/ide-port.jpg",
     "brandName": "Conector IDE de datos"
   },
   {
-    "iconName": "../img/molex-power.jpg",
+    "iconName": "https://i.postimg.cc/H85bT3x3/molex-power.jpg",
     "brandName": "Conector Molex"
   },
   {
-    "iconName": "../img/24-pin.jpg",
+    "iconName": "https://i.postimg.cc/HJZwzVR0/24-pin.jpg",
     "brandName": "Conector de 24 pines (ATX)"
   },
   {
-    "iconName": "../img/4-pin.jpg",
+    "iconName": "https://i.postimg.cc/4YGQxCpc/4-pin.jpg",
     "brandName": "Conector de 4/8 pines (CPU)"
   },
   {
-    "iconName": "../img/pci.jpg",
+    "iconName": "https://i.postimg.cc/qzs2YmWv/pci.jpg",
     "brandName": "Slot PCI"
   },
   {
-    "iconName": "../img/pcie.jpg",
+    "iconName": "https://i.postimg.cc/TKTnXVXq/pcie.jpg",
     "brandName": "Slot PCI Express"
   },
   {
-    "iconName": "../img/agp.jpg",
+    "iconName": "https://i.postimg.cc/B8Q52xYQ/agp.jpg",
     "brandName": "Slot AGP"
   },
   {
-    "iconName": "../img/rj45.jpg",
+    "iconName": "https://i.postimg.cc/qNQyBNJf/rj45.jpg",
     "brandName": "Puerto RJ-45 (Ethernet)"
   },
   {
-    "iconName": "../img/ps2.jpg",
+    "iconName": "https://i.postimg.cc/bscQmXC5/ps2.jpg",
     "brandName": "Puerto PS/2"
   },
   {
-    "iconName": "../img/serial-port.jpg",
+    "iconName": "https://i.postimg.cc/4HzHDdLS/serial-port.jpg",
     "brandName": "Puerto Serial (RS-232)"
   },
   {
-    "iconName": "../img/vga.jpg",
+    "iconName": "https://i.postimg.cc/8sWvJKpm/vga.jpg",
     "brandName": "Puerto VGA"
   },
   {
-    "iconName": "../img/jack3-5.jpg",
+    "iconName": "https://i.postimg.cc/34kgc3Qs/jack3-5.jpg",
     "brandName": "Puerto de audio 3.5 mm"
   },
   {
-    "iconName": "../img/dvi.jpg",
+    "iconName": "https://i.postimg.cc/zykSLdkc/dvi.jpg",
     "brandName": "Puerto DVI"
   },
   {
-    "iconName":"../img/ram.jpg",
-    "brandName":"Slot memoria RAM"
+    "iconName": "https://i.postimg.cc/DWZsS70S/ram.jpg",
+    "brandName": "Slot memoria RAM"
   },
   {
-    "iconName":"../img/hdmi.jpg",
-    "brandName":"Puerto HDMI"
+    "iconName": "https://i.postimg.cc/0rJYG5fm/hdmi.jpg",
+    "brandName": "Puerto HDMI"
   },
   {
-    "iconName":"../img/usb-a.jpg",
-    "brandName":"Puerto USB-A"
+    "iconName": "https://i.postimg.cc/N2hrCT4X/usb-a.jpg",
+    "brandName": "Puerto USB-A"
   }
 ]
