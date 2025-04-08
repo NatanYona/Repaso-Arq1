@@ -1,74 +1,78 @@
 [
   {
-    "iconName": "https://i.postimg.cc/yJbR923v/sata-power.jpg",
+    "iconName": "https://i.ibb.co/wNvR2FZk/sata-power.jpg",
     "brandName": "Conector SATA de energía"
   },
   {
-    "iconName": "https://i.postimg.cc/ph5FBkDx/sata-data.jpg",
+    "iconName": "https://i.ibb.co/Y48NQ3YZ/sata-data.jpg",
     "brandName": "Conector SATA de datos"
   },
   {
-    "iconName": "https://i.postimg.cc/BLRxWRqX/ide-port.jpg",
+    "iconName": "https://i.ibb.co/C3PKC1nH/ide-port.jpg",
     "brandName": "Conector IDE de datos"
   },
   {
-    "iconName": "https://i.postimg.cc/H85bT3x3/molex-power.jpg",
+    "iconName": "https://i.ibb.co/HLzm9Pn3/molex-power.jpg",
     "brandName": "Conector Molex"
   },
   {
-    "iconName": "https://i.postimg.cc/HJZwzVR0/24-pin.jpg",
+    "iconName": "https://i.ibb.co/RkhLm7Gm/24-pin.jpg",
     "brandName": "Conector de 24 pines (ATX)"
   },
   {
-    "iconName": "https://i.postimg.cc/4YGQxCpc/4-pin.jpg",
+    "iconName": "https://i.ibb.co/4nYt8cqW/4-pin.jpg",
     "brandName": "Conector de 4/8 pines (CPU)"
   },
   {
-    "iconName": "https://i.postimg.cc/qzs2YmWv/pci.jpg",
+    "iconName": "https://i.ibb.co/qFgsDhJ6/pci.jpg",
     "brandName": "Slot PCI"
   },
   {
-    "iconName": "https://i.postimg.cc/TKTnXVXq/pcie.jpg",
-    "brandName": "Slot PCI Express"
+    "iconName": "https://i.ibb.co/v6CqYF2X/pcie-x16.jpg",
+    "brandName": "Slot PCI Express x16"
   },
   {
-    "iconName": "https://i.postimg.cc/B8Q52xYQ/agp.jpg",
+    "iconName": "https://i.ibb.co/0jKZDcHZ/pcie-1x.webp",
+    "brandName": "Slot PCI Express x1"
+  },
+  {
+    "iconName": "https://i.ibb.co/Z6y36tHY/graphics-card-agp-slot-connection-600nw-2463292003.webp",
     "brandName": "Slot AGP"
   },
   {
-    "iconName": "https://i.postimg.cc/qNQyBNJf/rj45.jpg",
+    "iconName": "https://i.ibb.co/fzNy0p4t/rj45.jpg",
     "brandName": "Puerto RJ-45 (Ethernet)"
   },
   {
-    "iconName": "https://i.postimg.cc/bscQmXC5/ps2.jpg",
+    "iconName": "https://i.ibb.co/tpmWQdrP/ps2.jpg",
     "brandName": "Puerto PS/2"
   },
   {
-    "iconName": "https://i.postimg.cc/4HzHDdLS/serial-port.jpg",
+    "iconName": "https://i.ibb.co/1tJG7TYb/serial-port.jpg",
     "brandName": "Puerto Serial (RS-232)"
   },
   {
-    "iconName": "https://i.postimg.cc/8sWvJKpm/vga.jpg",
+    "iconName": "https://i.ibb.co/vxbWMMcf/vga.jpg",
     "brandName": "Puerto VGA"
   },
   {
-    "iconName": "https://i.postimg.cc/34kgc3Qs/jack3-5.jpg",
+    "iconName": "https://i.ibb.co/RT69RbM4/jack3-5.jpg",
     "brandName": "Puerto de audio 3.5 mm"
   },
   {
-    "iconName": "https://i.postimg.cc/zykSLdkc/dvi.jpg",
+    "iconName": "https://i.ibb.co/6Rfgmpky/dvi.jpg",
     "brandName": "Puerto DVI"
   },
   {
-    "iconName": "https://i.postimg.cc/DWZsS70S/ram.jpg",
+    "iconName": "https://i.ibb.co/gbPtyk60/ram.jpg",
     "brandName": "Slot memoria RAM"
   },
   {
-    "iconName": "https://i.postimg.cc/0rJYG5fm/hdmi.jpg",
+    "iconName": "https://i.ibb.co/Z67tXk3Z/hdmi.jpg",
     "brandName": "Puerto HDMI"
   },
   {
-    "iconName": "https://i.postimg.cc/N2hrCT4X/usb-a.jpg",
+    "iconName": "https://i.ibb.co/YBVqd8Dq/usb-a.jpg",
     "brandName": "Puerto USB-A"
   }
 ]
