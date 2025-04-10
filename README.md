@@ -101,10 +101,11 @@ Podés usar este juego tanto desde una PC como desde un smartphone.
 
 ## 📝 Historial de actualizaciones
 
-- **Alpha 1.2** - Se agregó la función de zoom para imágenes en desktop y mobile.
-- **Alpha 1.1** - Se incorporó el temporizador de juego.
 - **Alpha 1.0** - Primera versión funcional del juego.
-
+- **Alpha 1.1** - Se incorporó el temporizador de juego.
+- **Alpha 1.2** - Se agregó la función de zoom para imágenes en desktop y mobile.
+- **ALpha 1.3** - Se implemento un sistema de puntos, ademas de una encriptacion para validar la partida.
+  
 ---
 
 ## 👤 Sobre mí
@@ -123,8 +124,7 @@ Este proyecto fue desarrollado en el marco de la materia **Arquitectura de Orden
 
 ## 📦 Extensiones posibles
 
-- Implementar puntuación persistente.
-- Compatibilidad con pantallas táctiles.
+- Implementar una carga de High Score local.
 - Accesibilidad para estudiantes con dificultades visuales.
 
 ---
