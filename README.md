@@ -104,7 +104,7 @@ Podés usar este juego tanto desde una PC como desde un smartphone.
 - **Alpha 1.0** - Primera versión funcional del juego.
 - **Alpha 1.1** - Se incorporó el temporizador de juego.
 - **Alpha 1.2** - Se agregó la función de zoom para imágenes en desktop y mobile.
-- **ALpha 1.3** - Se implemento un sistema de puntos, ademas de una encriptacion para validar la partida.
+- **Alpha 1.2** - Se implemento un sistema de puntos, ademas de una encriptacion para validar la partida.
   
 ---
 
